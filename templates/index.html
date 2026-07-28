@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmarker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <section id="section">
+    <div class="section">
+        <div class="container1">
+          <h1 class="text-center">Bookmarker</h1>
+        </div>
+        <div class="divider"></div>
+        <p class="subtitle text-center"><i class="fas fa-bookmark" style="color: #3FA55C;"></i> Bookmark your favo<span style="color: #B2AC49;">rite sites</span> <i class="fas fa-bookmark" style="color: #B2AC49;"></i></p>
+        <div class="form">
+          <div class="d-flex flex-column">
+            <label for="siteName" class="mb-2"><i class="fa-solid fa-book"></i> Site Name</label>
+            <input type="text" id="Name" placeholder="Bookmark Name" class="form-control mb-3" oninput="validateName()">
+          </div>
+          <div class="d-flex flex-column">
+            <label for="siteUrl" class="mb-2"><i class="fa-solid fa-link"></i> Site URL</label>
+            <input type="text" id="Url" placeholder="Website URL" class="form-control mb-3" oninput="validateUrl()">
+          </div>
+          <div class="mb-4 mt-4 text-center">
+            <button type="submit" id="submitBtn" class="btn btn-primary" onclick="dataproudct()">Submit</button>
+            <button type="button" id="cancelEditBtn" class="btn btn-secondary d-none" onclick="canceledit()">Cancel</button>
+          </div>
+        </div>
+        <div class="divider"></div>
+    </div>
+    <table>
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="bookmarksResults" class="bg-white"></tbody>
+    </table>
+    <div id="popupModal" class="popup d-none">
+    <div class="popup-content d-flex flex-column p-5 rounded-3">
+        <div class="">
+            <i class="fa-solid fa-circle" style="color: #e90c17;"></i>
+            <i class="fa-solid fa-circle" style="color: #FFD43B;"></i>
+            <i class="fa-solid fa-circle" style="color: #3bff3b;"></i>
+        </div>
+      <button class="btn-close align-self-end" onclick="closePopup()">✖</button>
+      <p class="text-danger mb-3 ">Site Name or URL is not valid Please follow the rules below:</p>
+      <ul class="list-unstyled">
+        <li class="text-danger"><i class="fas fa-times-circle"></i> Site name must contain at least 3 characters</li>
+        <li class="text-danger"><i class="fas fa-times-circle"></i> Site URL must be a valid one</li>
+      </ul>
+    </div>
+  </div>
+  </section>
+
+  
+
+
+
+ <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

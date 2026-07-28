@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS bookmarks;
+
+CREATE TABLE bookmarks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    url TEXT NOT NULL,
+    created_at TEXT NOT NULL
+);
